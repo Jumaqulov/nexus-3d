@@ -1,0 +1,11 @@
+/* The React mount point must not create a new layout or containing block. */
+#root {
+  display: contents;
+}
+
+/* Clip oversized decorative layers without creating a new scroll container
+   that would change the sticky scenes or vertical scroll animations. */
+html,
+body {
+  overflow-x: clip;
+}
