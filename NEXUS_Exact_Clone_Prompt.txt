@@ -1,0 +1,173 @@
+NEXUS — EXACT WEBSITE REPRODUCTION PROMPT
+
+ROLE AND OBJECTIVE
+You are a senior creative frontend engineer. Reproduce the supplied NEXUS website as faithfully as possible, including its original artwork, typography, layout, responsive behavior, long scrolling journey, parallax, canvas effects, sound, keyboard controls, and immersion mode.
+
+This is an exact reproduction task, not a redesign, reinterpretation, or opportunity to improve the design. Deliver the working website itself. Do not stop at a plan, a screenshot, a mockup, or a list of instructions.
+
+INPUTS
+1. NEXUS_Source_Code.zip — the authoritative implementation, including all original in-page assets.
+2. SOURCE_SHA256.json inside the extracted project — hashes and byte sizes of the original website files.
+3. Reference website: https://nexus-gaming.starlabuz.chatgpt.site
+
+The reference URL may require its owner's access. The ZIP is sufficient to reproduce the website: do not depend on being able to open that URL, request account credentials, or replace the supplied implementation with an approximation.
+
+EXACTNESS RULES
+- The files in the supplied dist/ directory are the primary specification. Preserve their contents, relative paths, stylesheet order, script order, element IDs, class names, data attributes, and event contracts.
+- Use the original images and font from the ZIP. Never regenerate, substitute, crop permanently, recolor, or redraw these assets. CSS cropping and transforms already defined by the source must remain unchanged.
+- Preserve the English interface copy, the NEXUS wordmark and icon, and every existing interaction.
+- Do not invent additional sections, menus, games, login screens, accounts, community statistics, forms, shops, subscriptions, or backend services.
+- Do not shorten the long scroll experience, remove sticky scenes, flatten the parallax, or replace the interactive 4D core with a static image.
+- Do not migrate the project into another framework unless the execution environment requires it. Prefer running the supplied source unchanged.
+- Do not overwrite the reference website or reuse its hosting identity for another project. Any separately requested deployment must be independent.
+- A descriptive prompt alone cannot guarantee identical pixels or artwork. If the source ZIP is missing, request it. Do not claim exact reproduction from a visual guess.
+
+IMPLEMENTATION AND FILES
+This is a buildless static website, authored in HTML, CSS, and browser JavaScript. The dist directory is the web document root and contains the actual source, not a framework build that requires missing source files.
+
+Preserve this file set:
+- dist/index.html
+- dist/style.css
+- dist/experience.css
+- dist/app.js
+- dist/experience.js
+- dist/assets/rift.webp
+- dist/assets/eden.webp
+- dist/assets/ranger.webp
+- dist/assets/display.woff
+- dist/assets/font-license.txt
+
+Load style.css before experience.css. Load app.js before experience.js, using the existing deferred script behavior.
+
+Serve dist/ through HTTP. Root-relative URLs such as /assets/rift.webp and /app.js assume that dist/ is the server's document root. Double-clicking index.html with a file:// URL is not the intended execution method. No database, external API key, npm installation, or compilation is needed by the original implementation.
+
+VISUAL DIRECTION
+Keep the existing cinematic sci-fi gaming presentation: charcoal and almost-black surfaces, acid-yellow typography and accents, warm golden portal light, and a separate cyan/teal atmosphere for Eden. It should feel like an explorable game world, with large typography and strong image depth.
+
+Preserve the source theme tokens:
+- Background: #10120f
+- Secondary surface: #161914
+- Primary text: #f2f3ec
+- Muted text: #a4aaa0
+- Acid-yellow accent: #d6fa36
+- Eden cyan: #a0f5e7
+- Borders: the translucent colors already defined by the source
+
+Typography:
+- Use the included display.woff through the existing NexusDisplay @font-face declaration. It is the supplied Barlow Condensed font asset; do not replace it with a vaguely similar condensed font.
+- Preserve the Arial/Helvetica body stack and Courier New monospace labels.
+- Retain the very large condensed uppercase headings, tight line heights, deliberate letter spacing, clipped-corner primary buttons, thin outlines, and sparse interface geometry.
+- Do not globally add rounded cards, generic gradients, excessive glass effects, or a different component-library theme.
+
+ORIGINAL ARTWORK
+- rift.webp: 1672 × 941. Dark alien landscape with a monumental golden orbital portal and left-side negative space.
+- eden.webp: 1672 × 941. Teal, luminous alien jungle and monumental abandoned structures.
+- ranger.webp: 1024 × 1536. Armored explorer on a transparent background, with warm rim lighting.
+
+The transparent ranger must remain a separate foreground layer. Keep the source's image positioning, contain/cover behavior, crop positions, shadows, and transform origins. Keep the included font license.
+
+PAGE ORDER — ALL EIGHT CONTENT SECTIONS
+
+1. HERO
+- Fixed NEXUS navigation, sound toggle, world links, and the current call to action.
+- Large three-line heading: BEYOND / THE / SCREEN.
+- Existing descriptive copy and BEGIN THE JOURNEY button, linking to #journey.
+- Enter immersion control.
+- Independent Rift background, Eden background, transparent ranger, atmosphere canvas, orbit accents, shading, vignette, and grain.
+- Two world selectors: 01 THE RIFT and 02 EDEN, with correct active and aria-pressed states.
+- Cursor-responsive layers and scroll-responsive image zoom, foreground motion, and independently moving headline lines.
+- Preserve the scroll cue and the lower scene information.
+
+Between the hero and the next section, preserve the tilted, acid-yellow animated marquee and its original copy.
+
+2. THE SIGNAL — #journey
+- A spacious introduction with the exact statement: "You weren't made to watch from the sidelines. You were made to cross them."
+- Words progressively brighten as the section is scrolled through. The final words receive the accent treatment.
+- Preserve the rotating asterisk, transmission label, and FOLLOW THE SIGNAL link.
+
+3. THE RIFT — #rift
+- A long sticky scene whose stage stays in view while scrolling advances the camera and text sequence.
+- Original desktop length: 330svh, with a 2150px minimum.
+- Original mobile length: 290svh, with a 1900px minimum.
+- Golden portal artwork progressively zooms from approximately 1.04× to 3.24×, with the existing transform origin.
+- Preserve the three text beats and their source timings:
+  FOLLOW / THE SIGNAL.
+  REALITY / IS SHIFTING.
+  CROSS THE / THRESHOLD.
+- Keep the reticle motion, scroll percentage, progress line, and perspective warp streaks. They must follow actual scroll progress, including when scrolling backward.
+- Do not replace this sequence with a simple time-based slideshow.
+
+4. THE PATHFINDER — #pathfinder
+- A second sticky chapter featuring the original transparent ranger.
+- Original desktop length: 205svh, with a 1450px minimum.
+- Original mobile length: 235svh, with a 1600px minimum.
+- Preserve the oversized background PATHFINDER typography, subtle grid, YOU / MAKE / THEM. heading, explorer profile, and supporting copy.
+- The ranger, heading, large background word, and profile panel move at different rates and in different directions.
+- Keep the original mobile rearrangement and the readable contrast over the figure.
+
+5. EDEN — #eden
+- A third sticky chapter introducing the teal alien jungle.
+- Original desktop length: 300svh, with a 2100px minimum.
+- Original mobile length: 270svh, with a 1900px minimum.
+- Start with the image inside the source's rounded clipped window, with a large EDEN title behind it.
+- As scrolling advances, expand the window to the full stage, move the background, fade the large title, and reveal the copy:
+  FIND SOMETHING / EXTRAORDINARY.
+- Preserve the floating luminous particles and TAKE A CLOSER LOOK button, which opens the Eden immersion scene.
+- Cinematic content that is still visually hidden must not receive keyboard focus. Preserve the source's inert state behavior.
+
+6. THE NEXUS CORE — #core
+- Heading: REALITY HAS / ANOTHER SIDE.
+- Keep the actual interactive four-dimensional hypercube, not a decorative imitation.
+- Geometry: 16 vertices, 32 edges, 24 square faces, and 8 cubic cells.
+- Rotate the original 4D coordinates through the XW, YW, and ZW planes, project from 4D to 3D, and then from 3D to the canvas.
+- Preserve the implementation's 4D perspective factor 2.1 / (3.2 - w), followed by its 3D perspective factor 6 / (6 - z).
+- Preserve the source's glow, translucent faces, depth sorting, accent-colored edges, cyan cross-dimension connections, and vertex points.
+- Dragging rotates the core. Arrow keys rotate it when the canvas has focus. Space or Enter shifts the dimension. The SHIFT DIMENSION button advances the target 4D rotation by π/3.
+- Keep touch scrolling possible; preserve touch-action: pan-y and the existing pointer handling.
+- Preserve the geometry labels, axis labels, 4D watermark, instructions, and button.
+
+After the core, preserve the horizontal parallax typography interlude:
+NO FINISH LINES.
+JUST POSSIBILITIES.
+
+7. WORLD SELECTION — #worlds
+- Keep NEW WORLD. / SAME INSTINCT. and the original supporting copy.
+- Two cinematic artwork cards: THE RIFT and EDEN.
+- Preserve the exact content, image crops, labels, corner marks, image hover zoom, lighting, and pointer-driven card tilt.
+- Each card opens the corresponding world in immersion mode.
+- Keep the original one-column mobile layout and two-column desktop layout.
+
+8. CLOSING SECTION
+- Keep STAY CURIOUS. / KEEP PLAYING.
+- Preserve the large circular immersion button, faint oversized background NEXUS treatment, and footer.
+- The footer's return link must navigate back to the top.
+
+GLOBAL BEHAVIOR
+- Use normal browser scrolling. Do not hijack the wheel, trap the user in a scroll area, or replace scrolling with slide navigation.
+- Preserve the fixed header's scrolled appearance, the thin top reading-progress bar, and the desktop chapter navigation with six anchors and active state.
+- Preserve the native requestAnimationFrame approach, smoothing, performance limits, visible-section checks, and hidden-tab behavior. Do not add GSAP, Three.js, React, WebGL, or smooth-scroll libraries merely to imitate functionality that already exists.
+- The original presentation uses layered CSS transforms and Canvas 2D. The core is a genuine mathematical 4D projection rendered to that canvas; the artwork layers are not downloadable 3D character models.
+- Keep ambient sound OFF by default. Start it only after the user enables it. Use the existing Web Audio sound generation, world-dependent tone, smooth volume changes, and hidden-tab suspension.
+- Immersion mode must fill the viewport, preserve the selected world, support switching worlds, keep sound controls available, trap keyboard focus correctly, close with Escape or EXIT IMMERSION, restore the original scroll position, and return focus to its trigger.
+- Preserve the nexus:beforemotionchange, nexus:motionchange, and nexus:immersionchange event coordination between the two scripts.
+
+ACCESSIBILITY, RESPONSIVENESS, AND PERFORMANCE
+- Preserve the existing responsive breakpoints and all mobile overrides. Do not implement only the desktop screenshot.
+- Keep meaningful keyboard focus, button labels, aria-pressed states, chapter navigation, status announcements, and the skip link.
+- Respect prefers-reduced-motion and the visible Motion on/off control.
+- When motion is off, keep all essential content readable, remove the long pinned intervals as the original source does, and preserve the current chapter as closely as the implementation allows.
+- The core must remain usable through direct controls when automatic animation is paused.
+- Keep image dimensions and the self-hosted font to avoid unnecessary layout shifts and network dependencies.
+- Do not add autoplay audio, flashes, heavy video downloads, external tracking, or unavailable placeholders.
+
+WORKFLOW AND ACCEPTANCE
+1. Extract the ZIP, inspect README_UZ.md, and inspect all ten original files listed in SOURCE_SHA256.json.
+2. Reuse dist/ unchanged and start a static HTTP server with dist/ as document root.
+3. Verify every original file against SOURCE_SHA256.json. If the default unchanged-source path is used, their SHA-256 hashes must match.
+4. Confirm the CSS and script loading order, all images and font files, anchor targets, and script syntax.
+5. If browser testing is available, inspect desktop and mobile layouts, then scroll the full page in both directions. Test all three sticky scenes, world selection, immersion and Escape, sound on/off, motion on/off, chapter links, core dragging, keyboard rotation, and SHIFT DIMENSION.
+6. For visual comparisons, use the same viewport, zoom, device-pixel ratio, font readiness, scroll position, selected world, and animation state. Do not confuse a different animated frame with a design change.
+7. If hosting requires any configuration, add it outside the original dist/ files where possible. Explain any unavoidable deviation rather than silently altering the site.
+8. Return the complete runnable project and, when requested, a separately deployed URL. Report which checks you actually performed and any remaining limitation.
+
+The finished result must reproduce the supplied NEXUS experience. Preserve the existing work; do not invent a different gaming website.

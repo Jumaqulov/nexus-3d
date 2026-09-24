@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10120f">
+  <title>NEXUS — Beyond the Screen</title>
+  <meta name="description" content="Cross the Rift, discover Eden, and explore the fourth dimension. An immersive gaming journey driven by your scroll.">
+  <link rel="canonical" href="https://nexus-gaming.starlabuz.chatgpt.site/">
+  <meta property="og:title" content="NEXUS — Beyond the Screen">
+  <meta property="og:description" content="Two worlds. One instinct. Keep exploring.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nexus-gaming.starlabuz.chatgpt.site/">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='8' fill='%23d6fa36'/%3E%3Cpath d='M10 29V11h5l10 12V11h5v18h-5L15 17v12z' fill='%2310120f'/%3E%3C/svg%3E">
+  <link rel="preload" href="/assets/display.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="/assets/rift.webp" as="image">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/experience.css">
+  <script src="/app.js" defer></script>
+  <script src="/experience.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <svg class="icon-library" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs>
+    <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M5 19 19 5M5 5h14v14"/></symbol>
+    <symbol id="icon-down" viewBox="0 0 24 24"><path d="M12 4v16m-7-7 7 7 7-7"/></symbol>
+    <symbol id="icon-expand" viewBox="0 0 24 24"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+    <symbol id="icon-play" viewBox="0 0 24 24"><path d="m9 5 11 7-11 7Z"/></symbol>
+    <symbol id="icon-pause" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></symbol>
+    <symbol id="icon-sound" viewBox="0 0 24 24"><path d="M11 4 6 8H3v8h3l5 4Zm4 4a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/></symbol>
+  </defs></svg>
+
+  <header class="site-header" id="top">
+    <a class="brand" href="#main" aria-label="Nexus home"><span class="brand-mark" aria-hidden="true">N</span><span>NEXUS<span class="brand-plus">®</span></span></a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="#journey">The journey</a>
+      <a href="#worlds">The worlds</a>
+      <a href="#core">The fourth dimension <svg class="icon small"><use href="#icon-arrow"/></svg></a>
+    </nav>
+    <div class="header-actions">
+      <button class="sound-toggle icon-button" aria-label="Enable ambient sound" aria-pressed="false" title="Ambient sound"><span class="sound-bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><span class="sound-label">SOUND OFF</span></button>
+      <a class="header-cta" href="#worlds">Find your world <svg class="icon"><use href="#icon-arrow"/></svg></a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="scene" id="scene" aria-hidden="true">
+        <div class="scene-landscape scene-landscape-rift" data-layer="landscape"></div>
+        <div class="scene-landscape scene-landscape-eden" data-layer="eden"></div>
+        <div class="scene-shade"></div>
+        <div class="scene-orbit"><span></span><span></span></div>
+        <div class="character-wrap" data-layer="character"><img class="character" src="/assets/ranger.webp" alt="" width="1024" height="1536" fetchpriority="high"></div>
+        <canvas id="atmosphere"></canvas>
+        <div class="scene-vignette"></div>
+        <div class="scene-grain"></div>
+      </div>
+
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="tiny-cross" aria-hidden="true">+</span> FOR THE ONES WHO PLAY <span class="eyebrow-line"></span></div>
+        <h1 id="hero-title"><span>BEYOND</span><span>THE</span><span class="accent">SCREEN.</span></h1>
+        <p>Some worlds are worth getting lost in.<br>Leave the ordinary. Find your next reality.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#journey">BEGIN THE JOURNEY <svg class="icon"><use href="#icon-down"/></svg></a>
+          <button class="immersion-button" data-immerse><span class="circle-button"><svg class="icon"><use href="#icon-expand"/></svg></span><span>Enter immersion</span></button>
+        </div>
+      </div>
+
+      <div class="scene-coordinate" aria-hidden="true"><span class="coordinate-cross">+</span><span>UNKNOWN TERRITORY<br>35° 41′ N &nbsp; 139° 41′ E</span></div>
+      <div class="scene-caption" aria-hidden="true"><span>EXPEDITION_001</span><span class="caption-line"></span><span>THE RIFT</span></div>
+      <div class="hero-side-label" aria-hidden="true">A DIFFERENT KIND OF ESCAPE — NEXUS</div>
+
+      <div class="hero-bottom">
+        <a class="scroll-cue" href="#journey"><span class="scroll-icon"><svg class="icon"><use href="#icon-down"/></svg></span><span>SCROLL TO DISCOVER</span></a>
+        <div class="world-switcher" role="group" aria-label="Choose the hero world">
+          <button class="world-switch is-active" data-world="rift" aria-pressed="true"><span class="world-number">01</span><span>THE RIFT</span><span class="world-switch-line"></span></button>
+          <button class="world-switch" data-world="eden" aria-pressed="false"><span class="world-number">02</span><span>EDEN</span><span class="world-switch-line"></span></button>
+        </div>
+        <div class="depth-hint"><span class="crosshair" aria-hidden="true"></span><span class="pointer-hint">MOVE TO EXPLORE</span></div>
+      </div>
+    </section>
+
+    <div class="manifesto-strip" aria-hidden="true"><div class="strip-track"><span>ESCAPE THE ORDINARY</span><b>✳</b><span>PLAY BEYOND LIMITS</span><b>✳</b><span>FIND YOUR WORLD</span><b>✳</b><span>ESCAPE THE ORDINARY</span><b>✳</b><span>PLAY BEYOND LIMITS</span><b>✳</b><span>FIND YOUR WORLD</span><b>✳</b></div></div>
+
+    <section class="signal-section" id="journey" aria-labelledby="signal-title" data-chapter="journey">
+      <div class="signal-heading"><span class="eyebrow">TRANSMISSION / 001</span><span class="signal-sign" aria-hidden="true">✳</span></div>
+      <h2 id="signal-title" class="signal-statement">You weren't made to watch from the sidelines. You were made to cross them.</h2>
+      <div class="signal-bottom"><span>THERE'S SOMETHING ON THE OTHER SIDE.</span><a href="#rift">FOLLOW THE SIGNAL <svg class="icon"><use href="#icon-down"/></svg></a></div>
+    </section>
+
+    <section class="journey-section rift-journey" id="rift" aria-labelledby="rift-title" data-chapter="rift">
+      <div class="journey-stage rift-stage">
+        <div class="rift-world" aria-hidden="true"></div>
+        <div class="rift-shade" aria-hidden="true"></div>
+        <canvas class="warp-canvas" id="warp-field" aria-hidden="true"></canvas>
+        <div class="stage-topline"><span class="eyebrow"><span class="chapter-number">01</span> THE RIFT</span><span class="stage-coordinates">SECTOR 07 / UNCHARTED</span></div>
+        <h2 class="sr-only" id="rift-title">Cross the Rift</h2>
+        <div class="rift-beats" aria-hidden="true">
+          <div class="rift-beat" data-beat="0"><span class="scene-overline">FIRST, YOU HEAR IT.</span><p>FOLLOW<br>THE <em>SIGNAL.</em></p></div>
+          <div class="rift-beat" data-beat="1"><span class="scene-overline">THEN, YOU FEEL IT.</span><p>REALITY<br>IS <em>SHIFTING.</em></p></div>
+          <div class="rift-beat" data-beat="2"><span class="scene-overline">THERE IS NO GOING BACK.</span><p>CROSS THE<br><em>THRESHOLD.</em></p></div>
+        </div>
+        <div class="portal-reticle" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+        <div class="stage-bottomline"><span>KEEP SCROLLING TO CROSS</span><span class="stage-meter"><i></i></span><span class="stage-percent" aria-hidden="true">000%</span></div>
+      </div>
+    </section>
+
+    <section class="journey-section ranger-journey" id="pathfinder" aria-labelledby="pathfinder-title" data-chapter="pathfinder">
+      <div class="journey-stage ranger-stage">
+        <div class="ranger-grid" aria-hidden="true"></div>
+        <div class="ranger-ghost-title" aria-hidden="true">PATHFINDER</div>
+        <div class="stage-topline"><span class="eyebrow"><span class="chapter-number">02</span> THE PATHFINDER</span><span class="stage-coordinates">NO COORDINATES REQUIRED</span></div>
+        <div class="ranger-copy"><span class="scene-overline">SOME FOLLOW PATHS.</span><h2 id="pathfinder-title">YOU<br>MAKE<br><em>THEM.</em></h2><p>No map. No second guesses.<br>Just you and everything<br>that hasn't been found.</p></div>
+        <div class="ranger-model"><img src="/assets/ranger.webp" alt="An armored explorer with gold-lit armor" width="1024" height="1536" loading="lazy"></div>
+        <div class="ranger-dossier"><span class="dossier-title">EXPLORER PROFILE / N° 01</span><dl><div><dt>CLASS</dt><dd>Pathfinder</dd></div><div><dt>ORIGIN</dt><dd>Unknown</dd></div><div><dt>MISSION</dt><dd>Go further.</dd></div></dl><span class="dossier-footer">THE NEXT MOVE IS YOURS.</span></div>
+        <div class="stage-bottomline"><span>BUILT FOR THE UNKNOWN.</span><span>01 / HUMAN INSTINCT</span></div>
+      </div>
+    </section>
+
+    <section class="journey-section eden-journey" id="eden" aria-labelledby="eden-title" data-chapter="eden">
+      <div class="journey-stage eden-stage">
+        <div class="eden-window"><div class="eden-world" aria-hidden="true"></div><div class="eden-shade" aria-hidden="true"></div><canvas id="eden-dust" aria-hidden="true"></canvas></div>
+        <div class="eden-giant-title" aria-hidden="true">EDEN</div>
+        <div class="stage-topline"><span class="eyebrow"><span class="chapter-number">03</span> EDEN</span><span class="stage-coordinates">SOMEWHERE OUTSIDE THE KNOWN</span></div>
+        <div class="eden-copy"><span class="scene-overline">GET A LITTLE LOST.</span><h2 id="eden-title">FIND SOMETHING<br><em>EXTRAORDINARY.</em></h2><p>Past the last checkpoint.<br>Beyond the edge of the map.<br>A world that never needed to be found.</p><button class="eden-enter" data-open-world="eden">TAKE A CLOSER LOOK <svg class="icon"><use href="#icon-expand"/></svg></button></div>
+        <div class="eden-whisper" aria-hidden="true">NOT EVERY WORLD<br>NEEDS CONQUERING.</div>
+        <div class="stage-bottomline"><span>LEAVE ONLY FOOTSTEPS.</span><span>DISCOVER / DON'T DESTROY</span></div>
+      </div>
+    </section>
+
+    <section class="dimension-section" id="core" aria-labelledby="core-title" data-chapter="core">
+      <div class="dimension-heading"><div><span class="eyebrow"><span class="chapter-number">04</span> THE NEXUS CORE</span><h2 id="core-title">REALITY HAS<br><em>ANOTHER SIDE.</em></h2></div><p>Turn it. Shift it.<br>Find the dimension you can't see.</p></div>
+      <div class="core-stage">
+        <div class="core-watermark" aria-hidden="true">4D</div>
+        <canvas id="hypercube" tabindex="0" role="img" aria-label="Interactive four-dimensional hypercube. Drag or use arrow keys to rotate. Press Space to shift dimension."></canvas>
+        <div class="core-axis" aria-hidden="true"><span>X</span><span>Y</span><span>Z</span><span class="active-axis">W</span></div>
+        <div class="core-spec"><span>TESSERACT / 001</span><dl><div><dt>VERTICES</dt><dd>16</dd></div><div><dt>EDGES</dt><dd>32</dd></div><div><dt>CELLS</dt><dd>08</dd></div></dl></div>
+        <div class="core-controls"><span>DRAG TO ROTATE · ARROW KEYS ALSO WORK</span><button class="shift-dimension">SHIFT DIMENSION <svg class="icon"><use href="#icon-arrow"/></svg></button></div>
+      </div>
+      <div class="core-footnote"><span>FOUR DIMENSIONS. A DIFFERENT PERSPECTIVE.</span><span>KEEP GOING. THERE'S MORE BELOW.</span></div>
+    </section>
+
+    <div class="interlude" aria-hidden="true"><span class="interlude-first">NO FINISH LINES.</span><span class="interlude-second">JUST <em>POSSIBILITIES.</em></span></div>
+
+    <section class="worlds-section" id="worlds" aria-labelledby="worlds-title">
+      <div class="section-heading reveal">
+        <div><div class="eyebrow"><span class="section-index">05 /</span> PICK YOUR ESCAPE</div><h2 id="worlds-title">NEW WORLD.<br><span class="muted-heading">SAME INSTINCT.</span></h2></div>
+        <p>Chase the unknown. Follow the signal.<br>There's a whole other side out there.</p>
+      </div>
+
+      <div class="world-grid">
+        <button class="world-card rift-card reveal" data-open-world="rift" aria-label="Explore The Rift in immersion mode">
+          <img src="/assets/rift.webp" alt="A monumental golden portal rising above a dark alien wasteland" width="1672" height="941" loading="lazy">
+          <span class="card-shade"></span>
+          <span class="card-top"><span class="world-tag">SCI-FI / EXPLORATION</span><span class="card-index">WORLD_01</span></span>
+          <span class="card-content"><span class="card-kicker">BEYOND THE LAST FRONTIER</span><span class="card-title">THE RIFT</span><span class="card-description">A signal from nowhere. A gateway to everything.</span><span class="card-link">EXPLORE WORLD <svg class="icon"><use href="#icon-arrow"/></svg></span></span>
+          <span class="card-corner" aria-hidden="true">+</span>
+        </button>
+        <button class="world-card eden-card reveal" data-open-world="eden" aria-label="Explore Eden in immersion mode">
+          <img src="/assets/eden.webp" alt="Luminous blue alien jungle surrounding monumental abandoned structures" width="1672" height="941" loading="lazy">
+          <span class="card-shade"></span>
+          <span class="card-top"><span class="world-tag">FANTASY / DISCOVERY</span><span class="card-index">WORLD_02</span></span>
+          <span class="card-content"><span class="card-kicker">WHERE THE WILD TAKES OVER</span><span class="card-title">EDEN</span><span class="card-description">Lost to time. Waiting to be found.</span><span class="card-link">EXPLORE WORLD <svg class="icon"><use href="#icon-arrow"/></svg></span></span>
+          <span class="card-corner" aria-hidden="true">+</span>
+        </button>
+      </div>
+      <div class="section-footnote"><span>TWO WORLDS. ONE WAY FORWARD.</span><span>KEEP EXPLORING <span aria-hidden="true">↗</span></span></div>
+    </section>
+
+    <section class="closing-section" aria-labelledby="closing-title">
+      <div class="closing-line"><span class="eyebrow">IT'S IN YOUR NATURE.</span><span aria-hidden="true">[ NXS / 001 ]</span></div>
+      <h2 id="closing-title">STAY CURIOUS.<br>KEEP <em>PLAYING.</em></h2>
+      <button class="closing-button" data-immerse aria-label="Enter the immersive world"><svg class="icon"><use href="#icon-arrow"/></svg></button>
+    </section>
+  </main>
+
+  <footer class="site-footer"><a class="brand footer-brand" href="#main"><span class="brand-mark" aria-hidden="true">N</span><span>NEXUS</span></a><span>BEYOND THE SCREEN. INTO YOUR ELEMENT.</span><a href="#main">Back to the surface <svg class="icon small"><use href="#icon-arrow"/></svg></a></footer>
+
+  <button class="motion-toggle" aria-pressed="true" aria-label="Pause visual motion"><svg class="icon small"><use href="#icon-pause"/></svg><span>Motion on</span></button>
+
+  <div class="reading-progress" aria-hidden="true"><span></span></div>
+  <nav class="chapter-nav" aria-label="Journey chapters">
+    <a href="#journey" aria-label="Introduction"><span>THE SIGNAL</span><i></i></a>
+    <a href="#rift" aria-label="Chapter one: The Rift"><span>THE RIFT</span><i></i></a>
+    <a href="#pathfinder" aria-label="Chapter two: The Pathfinder"><span>PATHFINDER</span><i></i></a>
+    <a href="#eden" aria-label="Chapter three: Eden"><span>EDEN</span><i></i></a>
+    <a href="#core" aria-label="Chapter four: The Nexus Core"><span>THE CORE</span><i></i></a>
+    <a href="#worlds" aria-label="Choose your world"><span>YOUR WORLD</span><i></i></a>
+  </nav>
+
+  <div class="immersion-ui" hidden>
+    <div class="immersion-top"><span class="immersion-wordmark">NEXUS / <span id="immersion-world-name">THE RIFT</span></span><button class="exit-immersion">EXIT IMMERSION <svg class="icon"><use href="#icon-close"/></svg></button></div>
+    <div class="immersion-bottom"><div><span class="eyebrow" id="immersion-subtitle">BEYOND THE LAST FRONTIER</span><h2 id="immersion-title">THE RIFT</h2></div><div class="immersion-controls"><button class="immersion-sound" aria-pressed="false">SOUND OFF <svg class="icon"><use href="#icon-sound"/></svg></button><button class="next-world">NEXT WORLD <svg class="icon"><use href="#icon-arrow"/></svg></button><p><span class="immersive-hint">Move your pointer to look around</span><span class="esc-hint"> · ESC to return</span></p></div></div>
+  </div>
+  <p class="sr-only" role="status" id="announcer"></p>
+</body>
+</html>
